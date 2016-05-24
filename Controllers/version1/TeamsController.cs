@@ -24,12 +24,13 @@ namespace DrinkCounter.Controllers
         [HttpGet]
         public List<TeamViewModel> Get()
         {
-            var result = (from t in _context.Teams
-                          join tm in _context.TeamMembers on t.Id equals tm.TeamId
+            var result = (from tm in _context.TeamMembers
                           select new TeamViewModel
                           {
                               TeamId = tm.Team.Id,
-                              TeamName = tm.Team.Name
+                              TeamName = tm.Team.Name,
+                              Date = tm.Team.CreateDate,
+                              //Activated = tm.Activated
                           }).Distinct().ToList();
             return result;
         }
@@ -45,7 +46,6 @@ namespace DrinkCounter.Controllers
                               TeamId = tm.Team.Id,
                               TeamName = tm.Team.Name,
                               Date = tm.Team.CreateDate,
-                              //Activated = tm.Activated
                           }).Distinct().ToList();
 
             //var result = (from tm in _context.TeamMembers

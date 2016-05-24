@@ -34,7 +34,7 @@ $(document).ready(function () {
                 TeamId: e.target.id
             };
             var url = 'http://localhost:5000/api/v1/teams/';
-            alert(tm.TeamId);
+            //alert(tm.TeamId);
             $.post(url, tm, function () {
                 location.reload();
             });
@@ -64,7 +64,6 @@ $(document).ready(function () {
     });
 
     $("#submit").click(function () {
-        //alert();
         var name = $("#newTeamName").val();
         var team = {
             UserId: userid,
@@ -73,7 +72,7 @@ $(document).ready(function () {
         var apiurl = 'http://localhost:5000/api/v1/Teams';
         //alert(team.Name);
         $.post(apiurl, team, function (data) {
-
+            //alert(data.TeamName);
         });
     });
 });
@@ -83,6 +82,7 @@ function format(d) {
     var date = new Date(d);
     //alert(date.getYear());
     var yr = date.getFullYear();
+    //alert(yr);
     var month = date.getMonth() < 10 ? '0' + (date.getMonth()+1) : (date.getMonth()+1);
     var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
     return (yr + '-' + month + '-' + day);

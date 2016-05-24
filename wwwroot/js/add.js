@@ -35,7 +35,7 @@ $(document).ready(function () {
         var url = 'http://localhost:5000/api/v1/DrinkCounts/';
         //alert(e.target.id);
         $.post(url, add, function (data) {
-            alert("Save successfully!");
+            //alert("Save successfully!");
         });
         $(location).attr('href', 'index.html');
     });

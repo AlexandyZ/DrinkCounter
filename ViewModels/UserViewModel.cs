@@ -18,8 +18,7 @@ namespace DrinkCounter.ViewModels
 
         //[MaxLength(3)]
         //[MinLength(1)]
-        //[RegularExpression(@"^[0-9]*$", ErrorMessage = "Only integers.")] 
-        [RegularExpression(@"^\$?\d+?$", ErrorMessage = "Only integers.")]
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "Only positive number.")]
         public int Age { get; set; }
 
         [MaxLength(1)]
