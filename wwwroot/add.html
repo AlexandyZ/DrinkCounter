@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="icon/favicon.ico">
+
+    <title>Drink Counter Add Drink Page</title>
+
+	<!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+	<!-- Icon from css/font-awesome -->
+	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+					<ul class="nav">
+						<li class="active"><a><i id="logo" class="fa fa-coffee fa-1x" aria-hidden="true"></i>Drink Counter<span class="sr-only">(current)</span></a></li>
+						<li><a href="index.html">Dashboard</a></li>
+						<li><a href="categories.html">Add Drink</a></li>
+						<li><a href="profile.html">Profile</a></li>
+						<li><a href="team.html">Team</a></li>
+						<li><a href="report.html">Report</a></li>
+						<li><a href="#">Log out</a></li>
+					</ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Add Drink</h1>
+					<div id="drinkInfo">
+						<div class="col-xs-4 col-sm-3 col-md-2 placeholder">
+							<div>Category: </div>
+						</div>
+						<div class="col-xs-8 col-sm-9 col-md-10 placeholder">
+							<div id="acategory">id=acategory</div>
+						</div>
+						<div class="col-xs-4 col-sm-3 col-md-2 placeholder">
+							<div>Type: </div>
+						</div>
+						<div class="col-xs-8 col-sm-9 col-md-10 placeholder">
+							<div id="atype">id=atype</div>
+						</div>
+					</div>
+					<form id="addDrinkForm">
+						<div class="col-xs-4 col-sm-3 col-md-2 placeholder">
+						Quantity:
+						</div>
+						<div class="col-xs-8 col-sm-9 col-md-10 placeholder">
+							<input id="aquantity" type="text" name="quantity" value="1" pattern="[1-9]{1,2}" title="Only integer">
+						</div>
+						<div class="col-xs-6 col-sm-12 col-md-12">
+							<input id="submit" type="button" value="Add">
+						</div>
+					</form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/add.js"></script>
+
+  </body>
+</html>

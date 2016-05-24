@@ -1,0 +1,162 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #727272;
+}
+
+/* Custom default button */
+.btn-default {
+  height: 38px;
+  width: 100px;
+  border: 1px solid #fff;
+  margin: 10px auto 0 auto;
+  font-family: 'Arial', sans-serif;
+  font-size:18px;
+  color: #ffffff;
+  border: solid 1px #009688;
+  background: #009688;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  -webkit-border-radius: .15em;
+  -moz-border-radius: .15em;
+  border-radius: .15em;
+}
+
+
+/*
+ * Base structure
+ */
+
+body{
+  background-image: url("../images/loginbackground.jpg");
+}
+ 
+html,
+body {
+  height: 100%;
+  /*background-color: #999;*/
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+/*
+ *login section
+ */
+.loginsection{
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  font-weight:bold;
+  box-shadow: 10px 10px 26px 0px #181818;
+}
+
+.logintitle{
+  padding-top: 30px;
+  padding-bottom: 35px;	
+  text-align: center;
+  font-size: 36px;
+  background-color: rgba(0,121,107,.6); 
+  color: #fff;
+}
+ 
+.loginform{
+  background-color: rgba(255,255,255,.95);
+  font-size: 20px;
+}
+
+#loginform{
+  padding-top: 30px;
+  padding-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 380px;
+}
+
+.logininput{
+  margin-bottom: 10px;
+  width: 380px;
+  height: 36px;
+  border: 2px solid #009688;
+  border-radius: 4px;
+  box-shadow: inset 0 0 1.5px #000000;
+}
+
+.registerlink{
+  background-color: rgba(255,255,255,.95);
+  padding-bottom: 50px;
+}
+
+#registerlink{
+  width:380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  text-align: center;
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}

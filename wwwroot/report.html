@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="icon/favicon.ico">
+
+    <title>Drink Counter Report Page</title>
+
+	<!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/date-picker.css" media="screen" type="text/css">
+	<link rel="stylesheet" href="css/jquery-labelauty.css">
+	<!-- Icon from css/font-awesome -->
+	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+					<ul class="nav">
+						<li class="active"><a><i id="logo" class="fa fa-coffee fa-1x" aria-hidden="true"></i>Drink Counter<span class="sr-only">(current)</span></a></li>
+						<li><a href="index.html">Dashboard</a></li>
+						<li><a href="categories.html">Add Drink</a></li>
+						<li><a href="profile.html">Profile</a></li>
+						<li><a href="team.html">Team</a></li>
+						<li><a href="report.html">Report</a></li>
+						<li><a href="#">Log out</a></li>
+					</ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+		  <h1 class="page-header">Report</h1>
+		  <!-- <div id="hasReport">
+		    <p>report graph here</p>
+		  </div> -->
+		  <form id="reportform">
+		    <h3 class="sub-header">Select Time Range</h3>
+		    <!-- Time picker -->
+            <div id='wrapper'>
+			  <select id="datePicker" class='custom-date' name='select'>
+				<option value='7'>7 Days</option>
+				<option value='30' selected='selected'>30 Days</option>
+				<option value='90'>90 Days</option>
+				<option value='180'>180 Days</option>
+				<option value='365'>365 Days</option>
+				<option value='custom'>Custom</option>
+			  </select>			  
+		    </div>
+		    <!-- <div style="text-align:center;clear:both;margin-top:360px">
+		    </div> -->
+		    <script src='js/jquery.js'></script>
+
+		    <!-- Time picker end-->
+		  
+			<!-- Checkbox-->
+			<div id="report">
+			<!--<h3 class="sub-header">Specify Day in a Week</h3>
+			  <ul class="dowebok">
+				<li><input type="checkbox" name="checkbox" data-labelauty="Monday"></li>
+				<li><input type="checkbox" name="checkbox" data-labelauty="Tuesday"></li>
+				<li><input type="checkbox" name="checkbox" data-labelauty="Wednesday"></li>
+				<li><input type="checkbox" name="checkbox" data-labelauty="Thursday"></li>
+				<li><input type="checkbox" name="checkbox" data-labelauty="Friday"></li>
+				<li><input type="checkbox" name="checkbox" data-labelauty="Saturday"></li>
+				<li><input type="checkbox" name="checkbox" data-labelauty="Sunday"></li>
+			  </ul>-->
+				<h3 class="sub-header">Select Categories</h3>
+				<ul class="dowebok">
+					<li><input value="c1" type="checkbox" name="c1" data-labelauty="Coffee"></li>
+					<li><input value="c2" type="checkbox" name="c2" data-labelauty="Tea"></li>
+					<li><input value="c3" type="checkbox" name="c3" data-labelauty=Pop></li>
+					<li><input value="c4" type="checkbox" name="c4" data-labelauty="Juice"></li>
+				</ul>
+				<h3 class="sub-header">Show Types</h3>
+				<ul class="dowebok">
+					<li><input value="t1" type="radio" name="radio" data-labelauty="Show types in graph"></li>
+					<li><input value="t2" type="radio" checked name="radio" data-labelauty="Not show types"></li>
+				</ul>
+				<h3 class="sub-header">Personal or Team</h3>
+				<ul class="dowebok">
+					<li><input value="p1" type="radio" checked name="radio2" data-labelauty="Personal"></li>
+					<li><input value="p2" type="radio" name="radio2" data-labelauty="Team"></li>
+				</ul>
+			</div>
+			<script src="js/jquery-1.8.3.min.js"></script>
+			<script src="js/jquery-labelauty.js"></script>
+			<script>
+			$(function(){
+				$(':input').labelauty();
+			});
+			</script>
+			<!-- Checkbox end-->
+			<div class="col-xs-6 col-sm-12 col-md-12">
+			  <input id="submit" type="submit" value="Show Report" onClick="getReport(this.form)">
+			</div>
+		  </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+	  <script src="js/GetReport.js"></script>
+    <script src="js/date-picker.js"></script>
+  </body>
+</html>
