@@ -11,7 +11,7 @@
         var newName = getNewName(name, length);
         for (var i = 0; i < length; i++) {
             str = str + "<div class=\"col-xs-6 col-sm-2 col-md-2 placeholder\">" +
-            "<input type=\"image\" class=\"img-responsive\"src=\"images/" + data.TypeName[i] + ".png\"" +
+            "<input type=\"image\" class=\"img-responsive\"src=\"images/" + data.TypeName[i] + ".gif\"" +
             "name=\"" + data.TypeName[i] + "\" border=\"0\" id=\"" + data.TypeId[i] + "\">" +
             "<h5 style=\"text-align:center; margin-left:-15px;\">" + newName[i] + "</h5></div>";
         }
