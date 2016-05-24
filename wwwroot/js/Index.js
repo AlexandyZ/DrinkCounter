@@ -132,7 +132,7 @@ function randomColorFactor () {
 };
 
 function randomColor () {
-  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + '.7' + ')';
+  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + '.8' + ')';
 };
 
 function getDate(data){
