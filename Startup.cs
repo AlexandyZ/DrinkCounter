@@ -24,7 +24,7 @@ namespace DrinkCounter
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = "Server=tcp:coffeestat.database.windows.net,1433;Database=DrinkingData;User ID=rabbits@coffeestat;Password=LaYomal67&:-@3;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            var connectionString = "Server=drinkcounter.database.windows.net;Database=DrinkCounterData;User ID=drink;Password=Antl123!;Trusted_Connection=False;Connect Timeout=30;Encrypt=True;MultipleActiveResultSets=False";
             services.AddCors();
             // Add framework services.
             services.AddMvc();
