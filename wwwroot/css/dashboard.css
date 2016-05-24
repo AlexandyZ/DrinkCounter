@@ -235,3 +235,18 @@ li {
   width: 300px;
   height: 36px;
 }
+
+#indexTitle{
+  text-align: center;
+  font-size: 26px;
+}
+#indexNum1,
+#indexNum2{
+  text-align: center;
+  font-size: 180px;
+}
+
+#subtitle{
+  text-align: center;
+  font-size: 20px;
+}

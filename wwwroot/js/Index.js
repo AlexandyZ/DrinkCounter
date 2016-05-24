@@ -45,7 +45,7 @@ function getDayBefore(data, dateArray){
     oldTime = newTime;
     newDays.unshift(newDay);
     newData.unshift(0);
-    for(var j = 0; j < dateArray.length; j++){
+    for(j = 0; j < dateArray.length; j++){
       if(newDay == dateArray[j]){
         newData[0] = (data[j]);
       }
@@ -75,7 +75,7 @@ var url3 = "http://localhost:5000/api/v1/teammembers/" + userid;
 $.ajax({
   url: url1,
   dataType: 'json',
-  type: 'GET',
+  type: 'GET'
 }).done(function (data) {
   var ttlAmount = data.TotalAmount;
   show1(ttlAmount);
@@ -93,7 +93,6 @@ $.ajax({
   var newData = combineSameDate(dateResult, amount);
   show2(ttlAmount);
   getDayBefore(newData[1], newData[0]);
-  //show3(newData[1], newData[0]);
 });
 
 var size = 0;
@@ -174,74 +173,14 @@ function combineSameDate(d, a){
 }
 
 function show1(amount) {
-  var label;
-  if (amount == 0){
-    label = "Amount = 0";
-  }else{
-    label = "Amount = " + amount;
-  }
-  var config = {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        data: [amount],
-        backgroundColor: randomColor()
-      }],
-      labels: [label]
-    },
-    options: {
-      responsive: true,
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Total drinks in a week'
-      },
-      animation: {
-        animateScale: true,
-        animateRotate: true
-      }
-    }
-  };
-
-  var ctx1 = document.getElementById("myChart1").getContext("2d");
-  window.myDoughnut = new Chart(ctx1, config);
+  var color = randomColor();
+  document.getElementById("myChart1").innerHTML = "<h4  id=\"indexTitle\">Total amount of drinks in this week</h4>" +
+    "<div style=\"color:" + color + ";\" id=\"indexNum1\">" + amount + "</div>";
 }
 function show2(amount) {
-  var label;
-  if (amount == 0){
-    label = "Amount = 0";
-  }else{
-    label = "Amount = " + amount;
-  }
-  var config = {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        data: [amount],
-        backgroundColor: randomColor()
-      }],
-      labels: [label]
-    },
-    options: {
-      responsive: true,
-      legend: {
-        position: 'top'
-      },
-      title: {
-        display: true,
-        text: "Total drinks in a Month"
-      },
-      animation: {
-        animateScale: true,
-        animateRotate: true
-      }
-    }
-  };
-
-  var ctx2 = document.getElementById("myChart2").getContext("2d");
-  window.myDoughnut = new Chart(ctx2, config);
+  var color = randomColor();
+  document.getElementById("myChart2").innerHTML = "<h4  id=\"indexTitle\">Total amount of drinks in this month</h4>" +
+    "<div style=\"color:" + color + ";\" id=\"indexNum2\">" + amount + "</div>";
 }
 
 function show3(amount, date) {

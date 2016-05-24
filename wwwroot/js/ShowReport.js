@@ -10,7 +10,7 @@ var userId = "ts7kpdpvz";
 
 dataArray = storedData.split(",");
 
-alert(dataArray);
+//alert(dataArray);
 switch (dataArray[0]){
   case "1":
     dateData = dataArray[1];
@@ -221,18 +221,14 @@ function getPreDate(n){
 }
 
 function showPersonAll(url){
-  var ttlAmount = [];
-  var color = [];
-  var label = [];
+  var ttlAmount;
   $.ajax({
     url: url,
     dataType: 'json',
     type: 'GET'
   }).done(function (data) {
-    ttlAmount[0] = data.TotalAmount;
-    label[0] = "Amount";
-    color[0] = randomColor();
-    showDoughnut(ttlAmount, label, color, "Total amount");
+    ttlAmount = data.TotalAmount;
+    showNumber(ttlAmount, "", "Total amount of drinks");
   });
 }
 function showPersonCat(urls, catNames){
@@ -251,9 +247,12 @@ function showPersonCat(urls, catNames){
       ttlAmounts.push(ttlAmount);
     });
   }
-  colors = getRandomColor(i);
-  showDoughnut(ttlAmounts, catNames, colors, "Total amount by categories");
-
+  if(ttlAmounts.length == 1){
+    showNumber(ttlAmounts[0], catNames[0], "Total amount of drinks");
+  }else {
+    colors = getRandomColor(i);
+    showDoughnut(ttlAmounts, catNames, colors, "Total amount of drinks by categories");
+  }
 }
 
 function showPersonType(urls, catNames){
@@ -287,7 +286,7 @@ function showPersonType(urls, catNames){
       ttlAmounts.push(ttlAmount);
     });
   }
-  showBar2(catNames, ttlAmounts, ttlType, typeNum, amount, colors, "Total amount by types");
+  showBar2(catNames, ttlAmounts, ttlType, typeNum, amount, colors, "Total amount of drinks by types");
 }
 function showTeamAll(urls, tm){
   var names = tm[2];
@@ -306,7 +305,11 @@ function showTeamAll(urls, tm){
     });
   }
   color = randomColor();
-  showBar1(ttlAmounts, names, color, "Total amount by teams");
+  if(ttlAmounts.length == 1){
+    showNumber(ttlAmounts[0], names[0], "Total amount of drinks");
+  }else {
+    showBar1(ttlAmounts, names, color, "Total amount of drinks by teams");
+  }
 }
 function showTeamCat(urls, tm, catNames){
   var names = tm[2];
@@ -324,8 +327,12 @@ function showTeamCat(urls, tm, catNames){
       ttlAmounts.push(ttlAmount);
     });
   }
-  colors = getRandomColor(catNames.length);
-  showBar3(names, ttlAmounts, catNames, colors, "Total amount by categories");
+  if(ttlAmounts.length == 1){
+    showNumber(ttlAmounts[0], catNames[0], "Total amount of drink in team: " + names[0]);
+  }else {
+    colors = getRandomColor(catNames.length);
+    showBar3(names, ttlAmounts, catNames, colors, "Total amount of drinks by categories");
+  }
 }
 function showTeamType(urls, tm, catNames){
   var ttlAmounts = [];
@@ -367,7 +374,7 @@ function showTeamType(urls, tm, catNames){
       labels.push(label);
     }
   }
-  showBar4(labels, ttlAmounts, ttlType, typeNum, amount, colors, "Total amount by types");
+  showBar4(labels, ttlAmounts, ttlType, typeNum, amount, colors, "Total amount of drinks by types");
 }
 
 function getRandomColor(n){
@@ -413,6 +420,13 @@ function combineSameType(t, a){
   dataArray[0] = newType;
   dataArray[1] = newAmount;
   return dataArray;
+}
+
+function showNumber(amount, title, text) {
+  var color = randomColor();
+  document.getElementById("chart").innerHTML = "<div class=\"col-xs-12 col-sm-12 col-md-7 placeholder\"><h4  id=\"indexTitle\">"
+    + text + "</h4>" + "<div id=\"subtitle\">" + title + "</div>" +
+    "<div style=\"color:" + color + ";\" id=\"indexNum1\">" + amount + "</div></div>";
 }
 
 function showDoughnut(amount, label, colors, text){
