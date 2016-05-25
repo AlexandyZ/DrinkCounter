@@ -229,7 +229,8 @@ li {
 #elastname,
 #eage,
 #egender,
-#eaddress{
+#eaddress,
+#aquantity{
   border: 2px solid #009688;
   border-radius: 4px;
   width: 300px;
@@ -249,4 +250,8 @@ li {
 #subtitle{
   text-align: center;
   font-size: 20px;
+}
+.error{
+    color:red;
+    padding-left:5px;
 }

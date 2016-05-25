@@ -14,8 +14,8 @@ var storage = window.localStorage;
 function getReport(form) {
   selected = form.select.selectedIndex;
   dateRange = form.select.options[selected].text;
-  radio1 = form.radio.value;
-  radio2 = form.radio2.value;
+  radio1 = $("input[name='radio']:checked").val();
+  radio2 = $("input[name='radio2']:checked").val();
   c1 = form.c1.checked;
   c2 = form.c2.checked;
   c3 = form.c3.checked;

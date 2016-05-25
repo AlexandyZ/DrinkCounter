@@ -23,6 +23,29 @@ $(document).ready(function () {
     //    $("#atype").text(data);               
     //});
     $("#atype").text(name);
+
+    $.validator.addMethod(
+        "regex",
+        function (value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        },
+        "Please check your input."
+    );
+
+    $("#addDrinkForm").validate({
+        rules: {
+            quantity: {
+                regex: "^[1-9]\{1,2}d*$"
+            }
+        },
+        messages: {
+            quantity: {
+                regex: "Please enter a positive number"
+            }
+        }
+    });
+
     $("#submit").click(function () {
         var tid = id;
         var qty = $("#aquantity").val();

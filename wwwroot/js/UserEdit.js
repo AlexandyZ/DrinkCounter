@@ -61,9 +61,52 @@ $(document).ready(function () {
         $('#eage').val(data.Age);
         $('#eaddress').val(data.Address);
     });
+
+    $.validator.addMethod(
+        "regex",
+        function (value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        },
+        "Please check your input."
+    );
+
+    $("#profileform").validate({
+        rules: {
+            firstname: {
+                minlength: 2,
+                regex: "[A-Za-z]{1,20}"
+            },
+            lastname: {
+                minlength: 2,
+                regex: "[A-Za-z]{1,20}"
+            },
+            gender: {
+                regex: "[FfMm]{1}"
+            },
+            age: {
+                regex: "^[1-9]{1,3}\d*$"
+            },
+        },
+        messages: {
+            firstname: {
+                minlength: "Firstname must be at least 2 characters",
+                regex: "Firstname must be all characters"
+            },
+            lastname: {
+                minlength: "Lastname must be at least 2 characters",
+                regex: "Lastname must be all characters"
+            },
+            gender: {
+                regex: "Gender must be F or M"
+            },
+            age: {
+                regex: "Age must be a positive number"
+            },
+        }
+    });
 });
 
-$("#profileform").validate();
 
 $("#submit").click(function () {
     var fname = $('#efirstname').val();
